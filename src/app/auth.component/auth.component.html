@@ -1,0 +1,30 @@
+<div class="auth-container">
+  <div>
+    <h2 *ngIf="!authService.isLoggedIn">Please Login</h2>
+    <h2 *ngIf="authService.isLoggedIn">Welcome Admin</h2>
+  </div>
+
+  <div *ngIf="!authService.isLoggedIn">
+    <form [formGroup]="authForm">
+      <div class="form-group">
+        <label class="center-block">Login:
+          <input type="text" required class="form-control" formControlName="login">
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="center-block">Password:
+          <input type="email" required class="form-control" formControlName="pass">
+        </label>
+      </div>
+
+    <button type="submit"
+            [disabled]="authForm.pristine" (click)="login()" *ngIf="!authService.isLoggedIn" class="btn btn-success">
+      Login
+    </button>
+    <button type="submit"
+            [disabled]="authForm.pristine" (click)="logout()" *ngIf="authService.isLoggedIn" class="btn btn-success">
+      Logout
+    </button>
+    </form>
+  </div>
+</div>

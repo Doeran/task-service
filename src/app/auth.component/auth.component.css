@@ -1,0 +1,16 @@
+.auth-container {
+  margin-top: 5px;
+}
+
+.auth-container form {
+  display: flex;
+}
+
+.form-group {
+  padding-right: 20px;
+}
+
+.auth-container .btn {
+  align-self: center;
+  height: 50%;
+}
