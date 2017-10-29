@@ -25,7 +25,7 @@ export class TaskItemComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.dataService.getTasks().subscribe(data => {
-      this.tasks = data;
+      this.tasks = data["tasks"];
     });
   }
 

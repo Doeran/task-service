@@ -12,10 +12,10 @@
     <button (click)="setOrder('_taskStatus')" class="btn btn-success">Status</button>
   </div>
   <div *ngFor="let task of tasks | orderBy: order: reverse">
-    <div class="col-md-4 well text-center " (click)="editTask(task)" [class.specialgg]="task._taskStatus">
-      <h2><span>{{task._userName}} {{task._taskStatus.toString()}}</span></h2>
-      <p><span>{{task._userEmail}}</span></p>
-      <p>{{task._userText}}</p>
+    <div class="col-md-4 well text-center" (click)="editTask(task)">
+      <h2><span>{{task?._userName}} {{task?._taskStatus?.toString()}}</span></h2>
+      <p><span>{{task?._userEmail}}</span></p>
+      <p>{{task?._userText}}</p>
       <img src="http://www.blackberryrc.com/uploads/allimg/110124/1-1101241G546-lp.jpg" class="img-thumbnail">
     </div>
   </div>
